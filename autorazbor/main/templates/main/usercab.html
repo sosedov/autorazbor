@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Личный кабинет {% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center mt-5">
+    <form class="form" style="width: 50%;">
+        <div>
+            <label for="name">Имя:</label>
+            <p id="name"></p>
+        </div>
+        <div>
+            <label for="lastname">Отчество:</label>
+            <p id="lastname"></p>
+        </div>
+        <div>
+            <label for="surname">Фамилия:</label>
+            <p id="surname"></p>
+        </div>
+        <div>
+            <label for="datebirth">Дата рождения:</label>
+            <p id="datebirth"></p>
+        </div>
+    </form>
+    <div class="col justify-content-center align-items-center mt-5" style="width: 50%;">
+        <label for="order_list">Список Ваших заказов. Здесь будут ваши активные и выполненые заказы</label>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

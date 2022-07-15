@@ -1,0 +1,43 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Поиск запчастей {% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center mt-5 ">
+    <form class="row gy-2 gx-3 align-items-center mt-5 gap-2" style="width: auto;">
+        <div class="row">
+            <div class="col-auto">
+                <select class="form-select">
+                    <option selected>Марка</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <select class="form-select">
+                    <option selected>Модель</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <select class="form-select">
+                    <option selected>Подмодель</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto">
+                <select class="form-select">
+                    <option selected>Запчасть</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <select class="form-select">
+                    <option selected>Дополнительно</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">Поиск</button>
+        </div>    
+    </form>
+</div>
+{% endblock %}
