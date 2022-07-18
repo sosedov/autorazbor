@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Авторизация пользователя {% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center align-items-center mt-5">
+        <form style="width: 400px;" class="mt-5">
+            <p>Для начала работы необходимо войти</p>
+            <div class="mb-3">
+                <label for="email" class="form-label">Адрес электронной почты</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <div class="gap-2">
+            <button type="submit" class="btn btn-primary">Войти</button>
+            <a class="btn" href="#">Регистрация</a>
+            </div>
+        </form>
+    </div>    
+{% endblock %}

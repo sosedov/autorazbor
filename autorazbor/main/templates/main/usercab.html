@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Личный кабинет {% endblock %}
+
+{% block content %}
+<div class="row d-flex jusify-content-around mt-5 mx-5">
+    <form class="row" style="width: 50%;">
+        <div class="">
+            <label for="name">Имя:</label>
+            <p id="name"></p>
+        </div>
+        <div>
+            <label for="lastname">Отчество:</label>
+            <p id="lastname"></p>
+        </div>
+        <div>
+            <label for="surname">Фамилия:</label>
+            <p id="surname"></p>
+        </div>
+        <div>
+            <label for="datebirth">Дата рождения:</label>
+            <p id="datebirth"></p>
+        </div>
+    </form>
+    <div class="mt-5" style="width: 50%;">
+        <label for="order_list">Список Ваших заказов. Здесь будут ваши активные и выполненые заказы</label>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
