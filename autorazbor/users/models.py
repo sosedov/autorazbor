@@ -2,11 +2,14 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractUser
 
+from django.core.validators import EmailValidator
+
+from generic.models import AbstractModel
+
 
 class User(AbstractUser):
-    username = models.CharField(max_length = 100, unique = True)
-    user_email = models.EmailField(max_length=254, default='', unique = True)
-    userphone = models.CharField(max_length = 16, unique = True)
+    username = models.CharField(max_length=255, validators=[EmailValidator(message="invalid email")], unique = True)
+    phone = models.PositiveIntegerField(default=None, null=True, unique = True)
 
     def __str__(self):
         return self.username
@@ -16,7 +19,7 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
 
 
-class Tariff(models.Model):
+class Tariff(AbstractModel):
     name = models.CharField(max_length=250)
     value = models.PositiveIntegerField(default=0)
 

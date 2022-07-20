@@ -16,9 +16,9 @@ class CarMark(AbstractModel):
         verbose_name_plural = 'Марки авто'
 
 
-class CarModel(models.Model):
+class CarModel(AbstractModel):
     name = models.CharField(max_length=250)
-    car_mark = models.ForeignKey(CarMark, on_delete = models.SET_NULL, null = True)
+    car_mark = models.ForeignKey(CarMark, on_delete = models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return self.name
@@ -28,9 +28,9 @@ class CarModel(models.Model):
         verbose_name_plural = 'Модели авто'
 
 
-class CarSubmodel(models.Model):
+class CarSubmodel(AbstractModel):
     name = models.CharField(max_length=250)
-    car_model = models.ForeignKey(CarModel, on_delete = models.SET_NULL, null = True)
+    car_model = models.ForeignKey(CarModel, on_delete = models.CASCADE, default=None, null=True)
 
     def __str__(self):
         return self.name

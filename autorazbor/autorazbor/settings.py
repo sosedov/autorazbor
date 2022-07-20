@@ -44,8 +44,8 @@ LOCAL_APPS = [
     'main',
     'cars',
     'parts',
-    'user',
-    'order',
+    'users',
+    'orders',
 ]
 
 INSTALLED_APPS += LOCAL_APPS
@@ -133,4 +133,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'users.User'

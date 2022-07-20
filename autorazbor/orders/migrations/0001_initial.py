@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             name='Order_Items',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('order', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='order.order')),
+                ('order', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='orders.order')),
                 ('part', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='parts.parts')),
             ],
             options={
