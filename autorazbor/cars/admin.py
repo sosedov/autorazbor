@@ -30,7 +30,6 @@ class CarModelAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name',)
     readonly_fields = ('created', 'changed',)
-    readonly_fields = ('created', 'changed',)
     inlines = [ModelsInLine]
 
 
