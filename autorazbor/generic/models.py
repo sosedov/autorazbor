@@ -13,3 +13,10 @@ class AbstractModel(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+
+class Huinya(AbstractModel):
+    name = models.CharField()
+    
+    def __str__(self):
+        return str(self.pk)
