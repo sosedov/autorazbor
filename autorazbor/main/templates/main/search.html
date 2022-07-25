@@ -9,16 +9,25 @@
             <div class="col-auto">
                 <select class="form-select">
                     <option selected>Марка</option>
+                        {% for el in mark %}
+                            <option>{{ el.name }}</option>                           
+                        {% endfor %}
                 </select>
             </div>
             <div class="col-auto">
                 <select class="form-select">
                     <option selected>Модель</option>
+                        {% for el in model %}
+                            <option>{{ el.name }}</option>                           
+                        {% endfor %}
                 </select>
             </div>
             <div class="col-auto">
                 <select class="form-select">
                     <option selected>Подмодель</option>
+                    {% for el in submodel %}
+                        <option>{{ el.name }}</option>                           
+                    {% endfor %}
                 </select>
             </div>
         </div>
@@ -40,4 +49,5 @@
         </div>    
     </form>
 </div>
+{{ parts }}
 {% endblock %}
