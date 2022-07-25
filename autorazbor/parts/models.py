@@ -45,11 +45,11 @@ class Parts(AbstractModel):
     part_subcategory = models.ForeignKey(PartSubCategory, on_delete = models.CASCADE, default=None, null=True)
     price = models.SlugField(max_length=250)
     seller_name = models.CharField(max_length=250)
-    seller_phone = models.PositiveIntegerField(unique = True)
+    seller_phone = models.PositiveIntegerField()
     seller_email = models.CharField(max_length=255, validators=[EmailValidator(message="invalid email")])
 
     def __str__(self):
-        return self.name
+        return f"{self.car_submodel.car_model.car_mark.name}/{self.car_submodel.car_model.name}/{self.car_submodel.name} - {self.part_subcategory.name}"
 
     def save(self, *args, **kwargs):
         self.changed = datetime.now()

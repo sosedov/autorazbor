@@ -11,10 +11,15 @@ def usercab(request):
     return render(request, 'main/usercab.html')
 
 def search(request):
+    filter = {}
+    if request.GET.get('mark'):
+        filter['car_submodel__car_model__car_mark__name'] = request.GET['mark']
     marks = CarMark.objects.all()
     models = CarModel.objects.all()
     submodels = CarSubmodel.objects.all()
-    parts = Parts.objects.all()
+    parts = []
+    if filter:
+        parts = Parts.objects.filter(**filter)
     return render(request, 'main/search.html', {
         'mark': marks,
         'model': models,
@@ -23,7 +28,11 @@ def search(request):
         })
 
 def parts(request):
-    return render(request, 'main/parts.html')
+    parts = Parts.objects.all()
+    data = dict(
+        parts=parts,
+    )
+    return render(request, 'main/parts.html', data)
     
 def order(request):
     return render(request, 'main/order.html')
