@@ -15,10 +15,6 @@ class Order(AbstractModel):
 
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        self.changed = datetime.now()
-        super(Order, self).save(*args, **kwargs)
         
     class Meta:
         verbose_name = 'Заказ'
@@ -31,10 +27,6 @@ class Order_Items(AbstractModel):
 
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        self.changed = datetime.now()
-        super(Order_Items, self).save(*args, **kwargs)
     
     class Meta:
         verbose_name = 'Заказ запчасти'

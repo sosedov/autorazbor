@@ -17,6 +17,6 @@ class AbstractModel(models.Model):
     def __str__(self):
         return str(self.pk)
 
-    def save(self, *args, **kwargs):
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.changed = datetime.now()
-        super(AbstractModel, self).save(*args, **kwargs)
+        super().save(force_insert, force_update, using, update_fields)
